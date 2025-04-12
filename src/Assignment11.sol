@@ -14,8 +14,7 @@ contract Assignment11 {
         require(msg.sender == owner, "caller is not the owner");
         _;
     }
-    // change the state mutability here
-    function contribute() public view {
+    function contribute() public payable {
         require(msg.value < 0.001 ether);
         contributions[msg.sender] += msg.value;
         if (contributions[msg.sender] > contributions[owner]) {
