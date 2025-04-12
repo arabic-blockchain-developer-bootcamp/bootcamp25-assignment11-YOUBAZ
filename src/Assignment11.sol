@@ -14,7 +14,6 @@ contract Assignment11 {
         require(msg.sender == owner, "caller is not the owner");
         _;
     }
-
     function contribute() public payable {
         require(msg.value < 0.001 ether);
         contributions[msg.sender] += msg.value;
@@ -22,11 +21,9 @@ contract Assignment11 {
             owner = msg.sender;
         }
     }
-
     function getContribution() public view returns (uint256) {
         return contributions[msg.sender];
     }
-
     function withdraw() public onlyOwner {
         payable(owner).transfer(address(this).balance);
     }
