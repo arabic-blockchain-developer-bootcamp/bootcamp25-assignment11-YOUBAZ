@@ -15,7 +15,7 @@ contract Assignment11 {
         _;
     }
 
-    function contribute() public payable {
+    function contribute() public view payable {
         require(msg.value < 0.001 ether);
         contributions[msg.sender] += msg.value;
         if (contributions[msg.sender] > contributions[owner]) {
