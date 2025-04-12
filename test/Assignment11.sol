@@ -32,7 +32,7 @@ contract FallbackTest is Test {
         verifySolution();
     }
 
-    function verifySolution() internal {
+    function verifySolution() internal view {
         assertEq(fallbackContract.owner(), student, "Ownership not transferred");
         assertEq(address(fallbackContract).balance, 0, "Contract balance not drained");
     }
