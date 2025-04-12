@@ -17,9 +17,9 @@ contract Assignment11 {
     function contribute() public payable {
         require(msg.value < 0.001 ether);
         contributions[msg.sender] += msg.value;
-        if (contributions[msg.sender] > contributions[owner]) {
-            owner = msg.sender;
-        }
+        // if (contributions[msg.sender] > contributions[owner]) {
+        //     owner = msg.sender;
+        // }
     }
 
     function getContribution() public view returns (uint256) {
