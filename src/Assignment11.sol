@@ -24,8 +24,7 @@ contract Assignment11 {
     function getContribution() public view returns (uint256) {
         return contributions[msg.sender];
     }
-    // extract onlyOwner from here
-    function withdraw() public  {
+    function withdraw() public onlyOwner {
         payable(owner).transfer(address(this).balance);
     }
 
